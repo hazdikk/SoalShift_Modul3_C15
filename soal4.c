@@ -29,7 +29,6 @@ void *thread_sum(void *no)
         pthread_mutex_lock(&mVar);
         TotalSum=TotalSum * iCount;
         pthread_mutex_unlock(&mVar);
-	printf("%d\n", TotalSum);
     }
     pthread_exit(NULL);
 }
