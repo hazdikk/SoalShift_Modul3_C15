@@ -1,21 +1,24 @@
-#include<iostream>
+#include<stdio.h>
 #include<pthread.h>
-using namespace std;
+#include<stdlib.h>
+#include<unistd.h>
+
+pthread_t t;
 int num;
 void* factorial()
 {
 	int fac=1;
-	for(int a=1;a<=num;a++) 
+	int a;
+	for(a=1;a<=num;a++) 
 	{
-	fac=fac*a;
-	cout<<"Factorial of Given Number is ="<<fac;
+		fac=fac*a;
+		printf("Factorial of Given Number is = %d", fac);
 	}
 }
 
 int main()
 {
-	pthread_t t;
-	cout<<" Enter Number To Find Its Factorial: ";
-	cin>>num;
-	pthread_create (&t,NULL,factorial,(void*)&num);return 0;
+	printf(" Enter Number To Find Its Factorial: ");
+	scanf("%d", &num);
+	pthread_create (&t,NULL,&factorial,(void*)&num);return 0;
 }
