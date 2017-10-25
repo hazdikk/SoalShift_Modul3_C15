@@ -6,14 +6,24 @@
 int lohan;
 int kepiting;
 
-pthread_t t[5];
+pthread_t t_k, t_l;
 
-int status();
+void* status(){
+        printf("lalala");
+        while(1){
+                if(lohan <= 0 || lohan > 100 || kepiting <= 0 || kepiting > 100){
+                        printf("Game Selesai");
+                        exit(EXIT_FAILURE);
+                }
+                lohan = 103;
+        }
+}
+
 int menu();
 
 int main(){
-     int err[5];
+     lohan=100, kepiting=100;
      int menu;
-     err[0]=pthread_create(&(t[0]), NULL, &status, NULL);
-     err[1]=pthread_create(&(t[1]), NULL, &status, NULL);
+     pthread_create(&t_k, NULL, status, NULL);
+     pthread_create(&t_l, NULL, status, NULL);
 }
