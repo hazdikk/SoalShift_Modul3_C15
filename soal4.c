@@ -5,17 +5,21 @@ void * thread_sum(void *);
 int TotalSum=1;
 pthread_mutex_t mVar=PTHREAD_MUTEX_INITIALIZER;
 
-int main()
+int main(/*int argc, char *argv[]*/)
 {
-    int iNumber,iCount;
-    pthread_t tid;
-    printf("Enter Number Up to Which You want to Sum :");
-    scanf("%d",&iNumber);
-    pthread_create(&tid,NULL,thread_sum,(void *)&iNumber);
+    int i=1;
+//    for(i=1;i<=argc;i++){
+    	int iNumber,iCount;
+    	pthread_t tid;
+	//iNumber = argv[i];
+    	printf("Enter Number Up to Which You want to Sum :");
+	scanf("%d", &iNumber);
+    	pthread_create(&tid,NULL,thread_sum,(void *)&iNumber);
 
-    pthread_join(tid,NULL);
+    	pthread_join(tid,NULL);
 
-    printf("Final Sum is : %d \n",TotalSum);
+    	printf("Final Sum is : %d \n",TotalSum);
+  //  }
 //    return 0;
 }
 
