@@ -17,10 +17,12 @@ int main(){
 key_t sharedKEY;
 int sharedID;
 
-struct Memory *data;
+struct Memory barang;
 int menu;
 char nama_barang[101];
 int total;
 
+sharedKEY = ftok("#", 'A');
+sharedID = shmget(sharedKEY, sizeof(struct Memory), IPC_CREAT | 0666);
 
 
