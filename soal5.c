@@ -14,6 +14,7 @@ void *cari(void *arg){
 	int flag;
 	char novel[100];
 	while(fscanf(f, "%s", novel)!=EOF){
+		
 	}
 }
 
@@ -21,5 +22,6 @@ int main(int argc, char *argv[]){
 	int i;
 	for(i=1; i<=argc; i++){
 		pthread_create(&(t[i]), NULL, &cari, (void*)argv[i]);
+		printf("%s\n", argv[i]);
 	}
 }
