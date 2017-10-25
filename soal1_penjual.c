@@ -25,4 +25,27 @@ int total;
 sharedKEY = ftok("#", 'A');
 sharedID = shmget(sharedKEY, sizeof(struct Memory), IPC_CREAT | 0666);
 
+if (sharedID < 0){
+printf("SHMGET ERROR!\n");
+exit(1);
+}
+
+barang = (struct Memory *) shmat(sharedID, NULL, 0);
+barang.status = BELUM_SIAP;
+
+barang.MP4A1=0;
+barang.PM2_V1=0;
+barang.SPR_3=0;
+barang.SS2_V5=0;
+barang.SPG1_V3=0;
+barang.MINE=0;
+
+while()
+{
+
+}
+
+else{
+return 0;
+}
 
