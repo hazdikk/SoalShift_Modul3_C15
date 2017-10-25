@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
 
     	pthread_join(tid,NULL);
 
-    	printf("Final Sum is : %d \n",TotalSum);
+    	printf("Hasil %d! = %d \n",atoi(argv[i]) , TotalSum);
     }
 //    return 0;
 }
