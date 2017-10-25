@@ -13,4 +13,14 @@ struct Memory{
 int MP4A1, PM2_V1, SPR_3, SS2_V5, SPG1_V3, MINE, status;
 };
 
+int main(){
+key_t sharedKEY;
+int sharedID;
+
+struct Memory *data;
+int menu;
+char nama_barang[101];
+int total;
+
+
 
