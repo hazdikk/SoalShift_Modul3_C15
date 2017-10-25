@@ -1,25 +1,27 @@
 # include <stdio.h>
 # include <pthread.h>
+# include <unistd.h>
+# include <stdlib.h>
 
 void * thread_sum(void *);
 int TotalSum=1;
 pthread_mutex_t mVar=PTHREAD_MUTEX_INITIALIZER;
 
-int main(/*int argc, char *argv[]*/)
+int main(int argc, char *argv[])
 {
     int i=1;
-//    for(i=1;i<=argc;i++){
+    for(i=1;i<=argc;i++){
+	TotalSum=1;
     	int iNumber,iCount;
     	pthread_t tid;
-	//iNumber = argv[i];
-    	printf("Enter Number Up to Which You want to Sum :");
-	scanf("%d", &iNumber);
+	iNumber = atoi(argv[i]);
+	//scanf("%d", &iNumber);
     	pthread_create(&tid,NULL,thread_sum,(void *)&iNumber);
 
     	pthread_join(tid,NULL);
 
     	printf("Final Sum is : %d \n",TotalSum);
-  //  }
+    }
 //    return 0;
 }
 
