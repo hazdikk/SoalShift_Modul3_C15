@@ -40,8 +40,30 @@ barang.SS2_V5=0;
 barang.SPG1_V3=0;
 barang.MINE=0;
 
-while()
+while(1)
 {
+printf("==Menu==\n");
+printf("1. Lihat stock senjata\n");
+printf("2. Beli senjata\n");
+printf(">> ");
+scanf("%d", &menu);
+
+if (menu == 1)
+{
+printf("Jumlah MP4A1 = %d\n", barang.MP4A1);
+printf("Jumlah PM2-V1 = %d\n", barang.PM2_V1);
+printf("Jumlah SPR-3 = %d\n", barang.SPR_3);
+printf("Jumlah SS2-V5 = %d\n", barang.SS2_V5);
+printf("Jumlah SPG1-V3 = %d\n", barang.SPG1_V3);
+printf("Jumlah MINE = %d\n", barang.MINE);
+}
+
+else if(menu == 2){
+printf("\nPilih Barang yang ingin Anda Beli!\n");
+printf("FORMAT INPUT : [NAMA_BARANG] [JUMLAH_BARANG]\n");
+printf("1. MP4A1\n2. PM2-V1\n3. SPR-3\n4. SS2-V5\n5. SPG1-V3\n6. MINE\n");
+printf(">> ");
+scanf("%s %d", nama_barang, &total);
 
 }
 
