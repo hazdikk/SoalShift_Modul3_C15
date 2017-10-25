@@ -65,6 +65,62 @@ printf("1. MP4A1\n2. PM2-V1\n3. SPR-3\n4. SS2-V5\n5. SPG1-V3\n6. MINE\n");
 printf(">> ");
 scanf("%s %d", nama_barang, &total);
 
+if (strcmp(nama_barang,"MP4A1")==0){
+ if (total > barang.MP4A1){
+ printf("Barang di stock tidak cukup\n");
+ }
+ else{
+ barang.MP4A1 -= total;
+ }
+}
+
+if (strcmp(nama_barang,"PM2-V1")==0){
+ if (total > barang.PM2_V1){
+ printf("Barang di stock tidak cukup\n");
+ }
+ else{
+ barang.PM2_V1 -= total;
+ }
+
+}
+
+if (strcmp(nama_barang,"SPR-3")==0){
+ if (total > barang.SPR_3){
+ printf("Barang di stock tidak cukup\n");
+ }
+ else{
+ barang.SPR_3 -= total;
+ }
+}
+
+if (strcmp(nama_barang,"SS2-V5")==0){
+ if (total > barang.SS2_V5){
+ printf("Barang di stock tidak cukup\n");
+ }
+ else{
+ barang.SS2_V5 -= total;
+ }
+}
+
+if (strcmp(nama_barang,"SPG1-V3")==0){
+ if (total > barang.SPG1_V3){
+ printf("Barang di stock tidak cukup\n");
+ }
+ else{
+ barang.SPG1_V3 -= total;
+ }
+
+}
+
+if (strcmp(nama_barang,"MINE")==0){
+ if (total > barang.MINE){
+ printf("Barang di stock tidak cukup\n");
+ }
+ else{
+ barang.MINE -= total;
+ }
+}
+
 }
 
 else{
